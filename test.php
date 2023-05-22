@@ -23,7 +23,19 @@
         <div class="colums">
             <div class="item">
                 <label for="name">Категория<span>*</span></label>
-                <input id="name" type="text" name="category" required/>
+                <select class="select" name="category" style="width:calc(100% - 10px); padding: 5px;">Категория<span>*</span>
+                <?php
+                $mysql = new mysqli('localhost','root', '', 'Testing');
+                $name=$mysql->query("SELECT * FROM `categories`");
+                while ($item = mysqli_fetch_row($name)):
+                ?>
+
+
+                    <option><?=$item[1]?></option>
+
+                <?php endwhile;?>
+                </select>
+
             </div>
             <div class="item">
                 <label for="name">Название<span>*</span></label>
@@ -49,7 +61,7 @@
             <input id="name" type="text" name="ans1" required/>
         </div>
         <div class="radioBtn">
-        <input  type="checkbox" id="Rans1" name="ans" value="Правильный1">
+        <input  type="checkbox" id="Rans1" name="ans11" value="Правильный1">
             <label for="Rans1">Правильный ответ 1</label>
         </div>
 
@@ -57,10 +69,10 @@
     <section class="itemRadio">
         <div class="item">
             <label for="ans1">Ответ 2<span>*</span></label>
-            <input id="name" type="text" name="ans1" required/>
+            <input id="name" type="text" name="ans2" required/>
         </div>
         <div class="radioBtn">
-            <input  type="checkbox" id="Rans2" name="ans" value="Правильный2">
+            <input  type="checkbox" id="Rans2" name="ans22" value="Правильный2">
             <label for="Rans2">Правильный ответ 2</label>
         </div>
 
@@ -69,10 +81,10 @@
     <section class="itemRadio">
         <div class="item">
             <label for="ans1">Ответ 3<span>*</span></label>
-            <input id="name" type="text" name="ans1" required/>
+            <input id="name" type="text" name="ans3" required/>
         </div>
         <div class="radioBtn">
-            <input  type="checkbox" id="Rans3" name="ans" value="Правильный3">
+            <input  type="checkbox" id="Rans3" name="ans33" value="Правильный3">
             <label for="Rans3">Правильный ответ 3</label>
         </div>
 
@@ -81,10 +93,10 @@
     <section class="itemRadio">
         <div class="item">
             <label for="ans1">Ответ 4<span>*</span></label>
-            <input id="name" type="text" name="ans1" required/>
+            <input id="name" type="text" name="ans4" required/>
         </div>
         <div class="radioBtn">
-            <input  type="checkbox" id="Rans4" name="ans" value="Правильный4">
+            <input  type="checkbox" id="Rans4" name="ans44" value="Правильный4">
             <label for="Rans4">Правильный ответ 4</label>
         </div>
 
