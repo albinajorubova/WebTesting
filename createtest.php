@@ -15,11 +15,39 @@ $ans33 = $_POST['ans33'];
 $ans4 = $_POST['ans4'];
 $ans44 = $_POST['ans44'];
 
-$question = $_POST['question'];
-$category = $_POST['category'];
-$nametest = $_POST['nametest'];
 
-//echo "<pre>";
-//var_dump($_POST);
 
-$mysql->query("INSERT INTO ")
+$category_id = mysqli_fetch_row($mysql->query("SELECT id FROM categories WHERE name = '$category'"))[0];
+
+$mysql->query("INSERT INTO name_test (`nametest`) values('$nametest')");
+//$last_id = mysqli_fetch_row($mysql->query("SELECT id  FROM name_test where nametest = '$nametest'"))[0];
+$last_id_category = mysqli_insert_id($mysql);
+$mysql->query("INSERT INTO question (`name`, `nameTest_ID`) values('$question','$last_id_category')");
+$last_id_question = mysqli_insert_id($mysql);
+
+
+
+if ($ans11 == 'on'){
+    $mysql->query("INSERT INTO answer (`answer`,`is_true`,`question_id`) VALUES ('$ans1','1','$last_id_question')");
+}else {
+    $mysql->query("INSERT INTO answer (`answer`,`is_true`,`question_id`) VALUES ('$ans1','0','$last_id_question')");
+}
+if ($ans22 == 'on'){
+    $mysql->query("INSERT INTO answer (`answer`,`is_true`,`question_id`) VALUES ('$ans2','1','$last_id_question')");
+}else {
+    $mysql->query("INSERT INTO answer (`answer`,`is_true`,`question_id`) VALUES ('$ans2','0','$last_id_question')");
+}
+if ($ans33 == 'on'){
+    $mysql->query("INSERT INTO answer (`answer`,`is_true`,`question_id`) VALUES ('$ans3','1','$last_id_question')");
+}else {
+    $mysql->query("INSERT INTO answer (`answer`,`is_true`,`question_id`) VALUES ('$ans3','0','$last_id_question')");
+}
+if ($ans44 == 'on'){
+    $mysql->query("INSERT INTO answer (`answer`,`is_true`,`question_id`) VALUES ('$ans4','1','$last_id_question')");
+}else {
+    $mysql->query("INSERT INTO answer (`answer`,`is_true`,`question_id`) VALUES ('$ans4','0','$last_id_question')");
+}
+
+
+
+//$mysql->query("INSERT INTO ")
