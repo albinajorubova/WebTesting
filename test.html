@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create a Quiz App With Timer Using</title>
+    <link rel="stylesheet" href="./test.css" />
+    <!-- FontAweome CDN Link for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+  <body>
+    <!-- start Quiz button -->
+    <div class="start_btn"><button>Начать тест</button></div>
+
+    <!-- Info Box -->
+    <div class="info_box">
+      <div class="info-title"><span>Правила теста</span></div>
+      <div class="info-list">
+        <div class="info">
+          1. У вас будет только <span>15 секунд</span> на каждый вопрос.
+        </div>
+        <div class="info">2. Есть только 1 правильный ответ.</div>
+        <div class="info">3. Вы не можете изменить выбранный ответ.</div>
+        <div class="info">
+          4. Вы не можете закончить тест прежде, чем ответите на все вопросы.
+        </div>
+        <div class="info">
+          5. В конце вы получите результат, основанный на ваших правильных
+          ответах.
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="quit">Закрыть</button>
+        <button class="restart">Продолжить</button>
+      </div>
+    </div>
+
+    <!-- Quiz Box -->
+    <div class="quiz_box">
+      <header>
+        <div class="title">Тест</div>
+        <div class="timer">
+          <div class="time_left_txt">Время</div>
+          <div class="timer_sec">15</div>
+        </div>
+        <div class="time_line"></div>
+      </header>
+      <section>
+        <div class="que_text"></div>
+        <div class="option_list"></div>
+      </section>
+
+      <footer>
+        <div class="total_que"></div>
+        <button class="next_btn">Далее</button>
+      </footer>
+    </div>
+
+    <!-- Result Box -->
+    <div class="result_box">
+      <div class="icon">
+        <i class="fas fa-crown"></i>
+      </div>
+      <div class="complete_text">Вы прошли тест</div>
+      <div class="score_text"></div>
+      <div class="buttons">
+        <button class="restart">Повторить</button>
+        <button class="quit">Закрыть</button>
+      </div>
+    </div>
+    <script src="./test.js"></script>
+
+  </body>
+</html>

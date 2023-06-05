@@ -24,4 +24,8 @@ $pass = md5($pass)."asdasdaa23143rf@#!sdasd";
 
 $mysql->query("INSERT INTO `Auth` (`username`, `pass`, `email`) values ('$username', '$pass', '$email')");
 
+$tester_id = mysqli_fetch_row($mysql->query("SELECT id FROM Auth WHERE username = 'Тестер'"))[0];
+
     header('Location: http://localhost/3-IS1/WebTesting');
+
+
